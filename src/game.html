@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>拼来拼趣</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="css/game-large.css" rel="stylesheet" media="screen and (min-width: 720px)">
+	<!--	<link href="css/index-small.css" rel="stylesheet" media="screen and (max-width: 720px)">
+		<link href="css/index-small.css" rel="stylesheet" media="screen and (max-device-width: 480px)">-->
+		<script src="js/jquery-1.8.2.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/game.js"></script>
+	</head>
+	<body>
+		<div id="main-wrapper" class="text-center">
+		
+			<div class="navbar">
+				<div class="navbar-inner">
+					<a class="brand" href="#"><img src="img/logo-nano.png" /></a>
+					<ul class="nav pull-right">
+						<li><a href="#">清空</a></li>
+						<li><a href="#">查词</a></li>
+						<li><a href="#">提交</a></li>
+						<li class="divider-vertical"></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								聊天
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="#">麻烦拼得快一点儿</a></li>
+								<li><a href="#">哇，你好厉害！</a></li>
+								<li><a href="#">哈哈哈，我真是机智酷炫！</a></li>
+								<li><a href="#">竟然吃了我这么多格子…</a></li>
+								<li class="divider"></li>
+								<li class="nav-header">自定义消息</li>
+								<li>
+									<form class="navbar-form pull-left">
+										<input type="text">
+										<button type="submit" class="btn">发送</button>
+									</form>
+								</li>
+							</ul>
+						</li>
+						<li><a href="#">战况</a></li>
+						<li><a href="#">退出该局</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div id="wrapper">
+				
+				<div id="word-area">
+					<div class="clearfix"></div>
+				</div>
+
+				<div id="cols">
+					<div id="left-col">
+						<div id="game-board">
+							<div class="odd mine my-last">I</div>
+							<div class="even mine  ">D</div>
+							<div class="odd mine my-last">M</div>
+							<div class="even">W</div>
+							<div class="odd his his-last">O</div>
+							<div class="even his">D</div>
+							<div class="odd his his-last">R</div>
+							<div class="even mine my-last">E</div>
+							<div class="odd">H</div>
+							<div class="even mine my-last">L</div>
+							<div class="odd mine his-last my-last">A</div>
+							<div class="even his ">P</div>
+							<div class="odd mine his-last my-last">T</div>
+							<div class="even mine my-last">A</div>
+							<div class="odd mine his-last my-last locked">O</div>
+							<div class="even his his-last">S</div>
+							<div class="odd mine his-last my-last">T</div>
+							<div class="even mine his-last my-last locked">C</div>
+							<div class="odd mine my-last locked">M</div>
+							<div class="even mine his-last my-last">N</div>
+							<div class="odd his his-last locked">I</div>
+							<div class="even his his-last">P</div>
+							<div class="odd mine his-last my-last">O</div>
+							<div class="even mine his-last my-last">R</div>
+							<div class="odd his his-last">G</div>
+						</div>
+					</div>
+	
+					<div id="right-col">
+					
+						<div id="info-area">
+							<div id="his-info-area" class="text-center">
+								<img src="upload/robot.png" />
+								<span class="gamer-name">Robot AI</span>
+								<span class="label gamer-status">正在拼词…</span>
+							</div>
+							<div id="my-info-area" class="text-center">
+								<img src="upload/2.jpg" />
+								<span class="gamer-name">Mr_Mao</span>
+								<span class="label gamer-status" style="visibility:hidden;">正在拼词…</span>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					
+						<ul class="nav nav-tabs nav-stacked">
+							<li><a class="my-word" title="<strong>tomatoes</strong>" data-trigger="hover" data-toggle="popover" data-content="[tə'meto]<br />n. 蕃茄（tomato的复数形式）" data-original-title="tomatoes" data-placement="top" data-html="true">tomatoes<span class="add-btn icon-plus pull-right"></span></a></li>
+							<li><a class="his-word" title="<strong>dreaming</strong>" data-trigger="hover" data-toggle="popover" data-content="['drimɪŋ]<br />adj. 有梦想的<br />v. 做梦（dream的ing形式）" data-original-title="dreaming" data-placement="top" data-html="true">dreaming<span class="add-btn icon-plus pull-right"></span></a></li>
+							<li><a class="my-word" title="<strong>protocols</strong>" data-trigger="hover" data-toggle="popover" data-content="n. 协议；礼仪礼节；条款（protocol的复数）<br />v. 拟定议定书；拟定草案（protocol的三单形式）
+" data-original-title="protocols" data-placement="top" data-html="true">protocols<span class="add-btn icon-plus pull-right"></span></a></li>
+							<li><a class="his-word" title="<strong>disproportionate</strong>" data-trigger="hover" data-toggle="popover" data-content="[,dɪsprə'pɔːʃ(ə)nət]<br />adj. 不成比例的" data-original-title="disproportionate" data-placement="top" data-html="true">disproportionate<span class="add-btn icon-plus pull-right"></span></a></li>
+							<li><a class="my-word" title="<strong>decomposition</strong>" data-trigger="hover" data-toggle="popover" data-content="[,dikɑmpə'zɪʃən]<br />n. 分解，腐烂；变质" data-original-title="decomposition" data-placement="top" data-html="true">decomposition<span class="add-btn icon-plus pull-right"></span></a></li>
+							<li><a class="his-word" title="<strong>prognosticator</strong>" data-trigger="hover" data-toggle="popover" data-content="n. 预言者" data-original-title="prognosticator" data-placement="top" data-html="true">prognosticator<span class="add-btn icon-plus pull-right"></span></a></li>
+							<li><a class="my-word" title="<strong>commentatorial</strong>" data-trigger="hover" data-toggle="popover" data-content="[kə,mentə'tɔ:ri:əl]<br />adj. 评论员的，评论家的；注释者的" data-original-title="commentatorial" data-placement="top" data-html="true">commentatorial<span class="add-btn icon-plus pull-right"></span></a></li>
+						</ul>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				
+			</div>
+		</div>
+	</body>
+</html>

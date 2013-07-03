@@ -1,0 +1,206 @@
+/* 基本框架 */
+body{
+	padding:0;
+}
+#main-wrapper{
+	margin: 0 10px;
+	min-width:240px;
+}
+div.logo-small{
+	background-image:url(../img/logo-small.png);
+	width:200px;
+	height:100px;
+	margin:0 auto;
+	background-repeat:no-repeat;
+}
+#left-col{
+}
+#right-col{
+	max-width:400px;
+	margin:0 auto;
+}
+
+/* 单词列表 */
+ul.nav-tabs a{
+	background-color:#fff;
+	font-weight:normal;
+	font-family:"Segoe UI";
+	font-size:18px;
+	text-align:center;
+	cursor:pointer;
+}
+ul.nav-tabs a.his-word{
+	color:#C0392B;
+}
+ul.nav-tabs a.my-word{
+	color:#2980B9;
+}
+
+/* 用户信息区 */
+#info-area{
+	margin:10px 0;
+}
+#info-area img{
+	width:60px;
+	height:60px;
+	border-radius: 30px;
+	box-shadow:0 0 5px black;
+}
+#info-area span.gamer-name{
+	font-size:16px;
+	color:#fff;
+	margin-bottom:5px;
+}
+#his-info-area{
+	width:120px;
+	float:left;
+}
+#my-info-area{
+	width:120px;
+	float:right;
+}
+#my-info-area span.gamer-status{
+	visibility:hidden;
+}
+
+/* 游戏区域 */
+#game-board {
+	width:100%;
+	height:100%;
+	max-width:400px;
+	margin:0 auto;
+}
+/* 静态字母板 */
+#game-board div {
+	float:left;
+	width:20%;
+	height:20%;
+	text-align:center;
+	vertical-align:middle;
+	display:inline-block;
+	font-size:30pt;
+	line-height:80px;
+	color:#2C3E50;
+	cursor:pointer;
+	background-color:#fff;
+	-webkit-transition:-webkit-transform,-webkit-box-shadow 0.2s;
+	-o-transition:-o-transform,-o-box-shadow 0.2s;
+	-moz-transition:-moz-transform,-moz-box-shadow 0.2s;
+	transition:transform,box-shadow 0.2s;
+	font-family:"Segoe UI light";
+}
+#game-board div.odd{
+	background-color:#fcfcfc;
+}
+#game-board div.even{
+	background-color:#fafafa;
+}
+#game-board div.mine {
+	background-color:#51a6ef;
+	color:#fff;
+}
+#game-board div.his {
+	background-color:#f96558;
+	color:#fff;
+}
+#game-board div.his.locked {
+	background-color:#C0392B;
+}
+#game-board div.mine.locked {
+	background-color:#2980B9;
+}
+/* 动态字母板 */
+#game-board div:hover {
+	-webkit-transform:scale(1.1);
+	-moz-transform:scale(1.1);
+	-o-transform:scale(1.1);
+	transform:scale(1.1);
+}
+#game-board div.animate {
+	-webkit-transform:scale(1);
+	-moz-transform:scale(1);
+	-o-transform:scale(1);
+	transform:scale(1);
+}
+#game-board div:hover, #game-board div.animate{
+	-webkit-box-shadow:1px 1px 10px black;
+	-o-box-shadow:1px 1px 10px black;
+	-moz-box-shadow:1px 1px 10px black;
+	box-shadow:1px 1px 10px black;
+}
+#game-board div.used {
+	-webkit-animation:bounceOut 0.5s ease both;
+	-moz-animation:bounceOut 0.5s ease both;
+	-o-animation:bounceOut 0.5s ease both;
+	animation:bounceOut 0.5s ease both;
+}
+@-webkit-keyframes bounceOut{
+	0% {-webkit-transform:scale(1)}
+	25% {-webkit-transform:scale(.95)}
+	50% {opacity:1;
+			-webkit-transform:scale(1.1)}
+	100%{opacity:0;
+			-webkit-transform:scale(.3)}
+}
+@-moz-keyframes bounceOut{
+	0%{-moz-transform:scale(1)}
+	25%{-moz-transform:scale(.95)}
+	50%{opacity:1;
+			-moz-transform:scale(1.1)}
+	100%{opacity:0;
+			-moz-transform:scale(.3)}
+}
+@-o-keyframes bounceOut{
+	0%{-o-transform:scale(1)}
+	25%{-o-transform:scale(.95)}
+	50%{opacity:1;
+			-o-transform:scale(1.1)}
+	100%{opacity:0;
+			-o-transform:scale(.3)}
+}
+@keyframes bounceOut{
+	0%{transform:scale(1)}
+	25% {transform:scale(.95)}
+	50% {opacity:1;
+			transform:scale(1.1)}
+	100%{opacity:0;
+			transform:scale(.3)}
+}
+#game-board div.animate {
+	-webkit-animation: shake 0.65s ease-in-out 1;	
+	-o-animation: shake 0.65s ease-in-out 1;
+	-moz-animation: shake 0.65s ease-in-out 1;
+	animation: shake 0.65s ease-in-out 1;
+}
+@-webkit-keyframes shake {
+			0% {-webkit-transform:rotate(0deg);}
+			20% {-webkit-transform:rotate(-12deg);}
+			40% {-webkit-transform:rotate(9deg);}
+			60% {-webkit-transform:rotate(-6deg);}
+			80% {-webkit-transform:rotate(4deg);}
+			100% {-webkit-transform:rotate(0deg);}
+}
+@-o-keyframes shake {
+			0% {-o-transform:rotate(0deg);}
+			20% {-o-transform:rotate(-12deg);}
+			40% {-o-transform:rotate(9deg);}
+			60% {-o-transform:rotate(-6deg);}
+			80% {-o-transform:rotate(4deg);}
+			100% {-o-transform:rotate(0deg);}
+}
+@-moz-keyframes shake {
+			0% {-moz-transform:rotate(0deg);}
+			20% {-moz-transform:rotate(-12deg);}
+			40% {-moz-transform:rotate(9deg);}
+			60% {-moz-transform:rotate(-6deg);}
+			80% {-moz-transform:rotate(4deg);}
+			100% {-moz-transform:rotate(0deg);}
+}
+@keyframes shake {
+			0% {transform:rotate(0deg);}
+			20% {transform:rotate(-12deg);}
+			40% {transform:rotate(9deg);}
+			60% {transform:rotate(-6deg);}
+			80% {transform:rotate(4deg);}
+			100% {transform:rotate(0deg);}
+}

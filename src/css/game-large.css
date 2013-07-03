@@ -1,0 +1,389 @@
+/* 基本框架 */
+body {
+	padding:0;
+}
+#main-wrapper {
+	width:720px;
+	min-width:720px;
+	margin:0 auto;
+}
+#left-col {
+	width:400px;
+	float:left;
+}
+#right-col {
+	width:320px;
+	float:right;
+}
+/* 导航条 */
+.navbar a.brand{
+	line-height:normal;
+	font-size:inherit;
+}
+.navbar-form input[type="text"]{
+	margin:0 10px;
+}
+/* 单词拼写区域 */
+#word-area{
+	margin:30px 0;
+	height:60px;
+}
+#word-area div.spelling-word {
+	width:50px;
+	height:60px;
+	float:left;
+	position: relative;
+	box-shadow:1px 1px 2px rgba(0,0,0,.3);
+}
+#word-area span{
+	margin-top:10px;
+	line-height:50px;
+	font-size:22px;
+	display:block;
+}
+#word-area div.spelling-word:before{
+	content:"";
+	position: absolute;
+	top: 5px;
+	left:21px;
+	width: 8px;
+	height: 8px;
+	background-color: #fff;
+	z-index:1;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	-moz-box-shadow: 0 1px 1px rgba(255, 255, 255, 1);
+	-webkit-box-shadow: 0 1px 1px rgba(255, 255, 255, 1);
+	box-shadow: 0 1px 1px rgba(255, 255, 255, 1);
+}
+#word-area span:before{
+	content:'';
+	float:left;
+	position:absolute;
+	top:-5px;
+	left:23px;
+	width:4px;
+	height:14px;
+	background-color:#dadada;
+	background-image:-webkit-gradient(linear, left top, left bottom, from(#f1f1f1), to(#aaa)); 
+	background-image:-webkit-linear-gradient(top,  #f1f1f1,  #aaa); 
+	background-image:-moz-linear-gradient(top,  #f1f1f1,  #aaa); 
+	background-image:-o-linear-gradient(top,  #f1f1f1,  #aaa); 
+	background-image:-ms-linear-gradient(top,  #f1f1f1,  #aaa); 
+	background-image:linear-gradient(top,  #f1f1f1,  #aaa); 
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#f1f1f1', EndColorStr='#aaaaaa');
+	z-index:2;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	border-radius:2px;
+}
+
+/* 单词列表 */
+ul.nav-tabs{
+	margin:20px 40px 0;
+}
+ul.nav-tabs a {
+	background-color:#fff;
+	font-weight:normal;
+	font-family:"Segoe UI";
+	font-size:18px;
+	text-align:center;
+	cursor:default;
+}
+ul.nav-tabs a.his-word {
+	color:#992b1f;
+}
+ul.nav-tabs a.my-word {
+	color:#036299;
+}
+ul.nav-tabs span.add-btn{
+	margin-top:3px;
+	opacity:.5;
+	cursor:pointer;
+}
+/* 用户信息区 */
+#info-area img {
+	width:60px;
+	height:60px;
+	border-radius: 30px;
+	box-shadow:0 0 5px black;
+	cursor:pointer;
+}
+#info-area span.gamer-name {
+	font-size:16px;
+	display:block;
+	margin-top:5px;
+	width: 165px;
+}
+#info-area span.gamer-status {
+	margin:5px;
+}
+#his-info-area {
+	width:160px;
+	float:left;
+}
+#my-info-area {
+	width:160px;
+	float:right;
+}
+/* 游戏区域 */
+#game-board {
+	width:400px;
+	height:400px;
+	background-color:#fcfcfc;
+}
+/* 静态字母板 */
+#game-board div {
+	float:left;
+	width:20%;
+	height:20%;
+	text-align:center;
+	vertical-align:middle;
+	display:inline-block;
+	font-size:32pt;
+	line-height:80px;
+	color:#000;
+	cursor:pointer;
+	font-family:"Calibri";
+	background-color:#fff;
+	-webkit-transition:-webkit-transform, -webkit-box-shadow 0.2s;
+	-o-transition:-o-transform, -o-box-shadow 0.2s;
+	-moz-transition:-moz-transform, -moz-box-shadow 0.2s;
+	transition:transform, box-shadow 0.2s;
+}
+#game-board div.odd, #word-area div.odd {
+	background-color:#fffefc;
+}
+#game-board div.even, #word-area div.even {
+	background-color:#fcfcfa;
+}
+#game-board div.mine, #word-area div.mine {
+	background-color:#82d1ff;
+}
+#game-board div.his, #word-area div.his {
+	background-color:#ffa399;
+}
+#game-board div.his.locked, #word-area div.his.locked {
+	background-color:#ff4733;
+}
+#game-board div.mine.locked, #word-area div.mine.locked {
+	background-color:#05a4ff;
+}
+/* 动态字母板 */
+#game-board div:hover {
+	-webkit-transform:scale(1.1);
+	-moz-transform:scale(1.1);
+	-o-transform:scale(1.1);
+	transform:scale(1.1);
+}
+div.animate {
+	-webkit-transform:scale(1);
+	-moz-transform:scale(1);
+	-o-transform:scale(1);
+	transform:scale(1);
+}
+#game-board div:hover, #game-board div.animate {
+	-webkit-box-shadow:1px 1px 10px rgba(0, 0, 0, .6);
+	-o-box-shadow:1px 1px 10px rgba(0, 0, 0, .6);
+	-moz-box-shadow:1px 1px 10px rgba(0, 0, 0, .6);
+	box-shadow:1px 1px 10px rgba(0, 0, 0, .6);
+}
+#game-board div.used {
+	-webkit-animation:bounceOut 0.5s ease both;
+	-moz-animation:bounceOut 0.5s ease both;
+	-o-animation:bounceOut 0.5s ease both;
+	animation:bounceOut 0.5s ease both;
+}
+@-webkit-keyframes bounceOut {
+ 0% {
+-webkit-transform:scale(1)
+}
+ 25% {
+-webkit-transform:scale(.95)
+}
+ 50% {
+opacity:1;
+ -webkit-transform:scale(1.1)
+}
+ 100% {
+opacity:0;
+ -webkit-transform:scale(.3)
+}
+}
+@-moz-keyframes bounceOut {
+ 0% {
+-moz-transform:scale(1)
+}
+ 25% {
+-moz-transform:scale(.95)
+}
+ 50% {
+opacity:1;
+ -moz-transform:scale(1.1)
+}
+ 100% {
+opacity:0;
+ -moz-transform:scale(.3)
+}
+}
+@-o-keyframes bounceOut {
+ 0% {
+-o-transform:scale(1)
+}
+ 25% {
+-o-transform:scale(.95)
+}
+ 50% {
+opacity:1;
+ -o-transform:scale(1.1)
+}
+ 100% {
+opacity:0;
+ -o-transform:scale(.3)
+}
+}
+@keyframes bounceOut {
+ 0% {
+transform:scale(1)
+}
+ 25% {
+transform:scale(.95)
+}
+ 50% {
+opacity:1;
+ transform:scale(1.1)
+}
+ 100% {
+opacity:0;
+ transform:scale(.3)
+}
+}
+div.animate {
+	-webkit-animation: shake 0.65s ease-in-out 1;
+	-o-animation: shake 0.65s ease-in-out 1;
+	-moz-animation: shake 0.65s ease-in-out 1;
+	animation: shake 0.65s ease-in-out 1;
+}
+@-webkit-keyframes shake {
+ 0% {
+-webkit-transform:rotate(0deg);
+}
+ 20% {
+-webkit-transform:rotate(-12deg);
+}
+ 40% {
+-webkit-transform:rotate(9deg);
+}
+ 60% {
+-webkit-transform:rotate(-6deg);
+}
+ 80% {
+-webkit-transform:rotate(4deg);
+}
+ 100% {
+-webkit-transform:rotate(0deg);
+}
+}
+@-o-keyframes shake {
+ 0% {
+-o-transform:rotate(0deg);
+}
+ 20% {
+-o-transform:rotate(-12deg);
+}
+ 40% {
+-o-transform:rotate(9deg);
+}
+ 60% {
+-o-transform:rotate(-6deg);
+}
+ 80% {
+-o-transform:rotate(4deg);
+}
+ 100% {
+-o-transform:rotate(0deg);
+}
+}
+@-moz-keyframes shake {
+ 0% {
+-moz-transform:rotate(0deg);
+}
+ 20% {
+-moz-transform:rotate(-12deg);
+}
+ 40% {
+-moz-transform:rotate(9deg);
+}
+ 60% {
+-moz-transform:rotate(-6deg);
+}
+ 80% {
+-moz-transform:rotate(4deg);
+}
+ 100% {
+-moz-transform:rotate(0deg);
+}
+}
+@keyframes shake {
+ 0% {
+transform:rotate(0deg);
+}
+ 20% {
+transform:rotate(-12deg);
+}
+ 40% {
+transform:rotate(9deg);
+}
+ 60% {
+transform:rotate(-6deg);
+}
+ 80% {
+transform:rotate(4deg);
+}
+ 100% {
+transform:rotate(0deg);
+}
+}
+/* 动态单词区域 */
+#word-area div{
+-webkit-transform-origin: 50% 0%;
+-moz-transform-origin: 50% 0%;
+-o-transform-origin: 50% 0%;
+transform-origin: 50% 0%;
+}
+#word-area div.flipping{
+-webkit-animation:flipInX 1s .2s ease both;
+-moz-animation:flipInX 1s .2s ease both;
+-o-animation:flipInX 1s .2s ease both;
+animation:flipInX 1s .2s ease both;}
+@-webkit-keyframes flipInX{
+0%{-webkit-transform:perspective(400px) rotateX(90deg);
+opacity:0}
+40%{-webkit-transform:perspective(400px) rotateX(-10deg)}
+70%{-webkit-transform:perspective(400px) rotateX(10deg)}
+100%{-webkit-transform:perspective(400px) rotateX(0deg);
+opacity:1}
+}
+@-moz-keyframes flipInX{
+0%{-moz-transform:perspective(400px) rotateX(90deg);
+opacity:0}
+40%{-moz-transform:perspective(400px) rotateX(-10deg)}
+70%{-moz-transform:perspective(400px) rotateX(10deg)}
+100%{-moz-transform:perspective(400px) rotateX(0deg);
+opacity:1}
+@-o-keyframes flipInX{
+0%{-0-transform:perspective(400px) rotateX(90deg);
+opacity:0}
+40%{-0-transform:perspective(400px) rotateX(-10deg)}
+70%{-0-transform:perspective(400px) rotateX(10deg)}
+100%{-0-transform:perspective(400px) rotateX(0deg);
+opacity:1}
+@keyframes flipInX{
+0%{transform:perspective(400px) rotateX(90deg);
+opacity:0}
+40%{transform:perspective(400px) rotateX(-10deg)}
+70%{transform:perspective(400px) rotateX(10deg)}
+100%{transform:perspective(400px) rotateX(0deg);
+opacity:1}
+}
